@@ -127,8 +127,9 @@ foreach ($pagesForSections as $page) {
 <?php if ($resources): ?>
   <section class="resources my-5">
     <div class="container">
-      <?php if ($key == 0): ?>
-        <?php foreach ($resources as $key => $item): ?>
+      <?php foreach ($resources as $key => $item): ?>
+      <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
+        <?php if ($key == 0): ?>
           <div class="row text-center mb-4">
             <div class="col">
               <div class="d-flex flex-column justify-content-center align-items-center">
@@ -138,116 +139,59 @@ foreach ($pagesForSections as $page) {
               <p><?php echo $item->post_content; ?></p>
             </div>
           </div>
-        <?php endforeach; ?>
-        <?php endif; ?>
-      <?php if ($key !== 0): ?>
-      <div class="row">
-        <?php foreach ($resources as $key => $item): ?>
-        <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
+        <div class="row"> 
+        <?php elseif ($key !== 0): ?>
           <div class="col-md-4">
             <img class="images-size mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="">
           </div>
-        <?php endforeach; ?>
-      </div>
-      <?php endif; ?>
+        <?php endif; ?>
+      <?php endforeach; ?>
+      </div> 
     </div>
   </section>
 <?php endif; ?>
 
-<section class="services py-5">
-  <div class="container">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h3 class="text-uppercase text-dark font-weight-bold">Services</h3>
-      <div class="underlining main-color-line mt-3 mb-5"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 services-item text-center mb-5">
-        <div class="services-item-headding">
-          <i
-            class="fab fa-accusoft icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <h4 class="services-item-name text-uppercase text-dark mb-3">Consectetur elit</h4>
-        </div>
-        <div class="services-item-text">
-          <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua , consectetur adipisicing elit</p>
-        </div>
-      </div>
-      <div class="col-md-4 services-item text-center mb-5">
-        <div class="services-item-headding">
-          <i
-            class="fas fa-american-sign-language-interpreting icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <h4 class="services-item-name text-uppercase text-dark mb-3">Consectetur elit</h4>
-        </div>
-        <div class="services-item-text">
-          <p>2Lorem ipsum dolor pisicing elit</p>
-        </div>
-      </div>
-      <div class="col-md-4 services-item text-center mb-5">
-        <div class="services-item-headding">
-          <i
-            class="fas fa-bell icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <h4 class="services-item-name text-uppercase text-dark mb-3">Consectetur elit</h4>
-        </div>
-        <div class="services-item-text">
-          <p>3Lorem et dolore magna aliqua , consectetur adipisicing elit</p>
-        </div>
-      </div>
-      <div class="col-md-4 services-item text-center mb-5">
-        <div class="services-item-headding">
-          <i
-            class="fas fa-archive icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <h4 class="services-item-name text-uppercase text-dark mb-3">Consectetur elit</h4>
-        </div>
-        <div class="services-item-text">
-          <p>4Lorem ipsum dolor sit amet, elit ctetur adipisicing elit, sed do eiu</p>
-        </div>
-      </div>
-      <div class="col-md-4 services-item text-center mb-5">
-        <div class="services-item-headding">
-          <i
-            class="fas fa-briefcase icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <h4 class="services-item-name text-uppercase text-dark mb-3">Consectetur elit</h4>
-        </div>
-        <div class="services-item-text">
-          <p>5Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua , consectetur adipisicing elit</p>
-        </div>
-      </div>
-      <div class="col-md-4 services-item text-center mb-5">
-        <div class="services-item-headding">
-          <i
-            class="fas fa-bus icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <h4 class="services-item-name text-uppercase text-dark mb-3">Consectetur elit</h4>
-        </div>
-        <div class="services-item-text">
-          <p>6Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua , consectetur adipisicing elit</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="rates">
-  <div class="rates-cover-bg py-5">
+<?php if ($services): ?>
+  <section class="services py-5">
     <div class="container">
-      <div class="row text-center text-white">
-        <div class="col">
-          <h3 class="text-uppercase font-weight-bold">Lorem ipsum</h3>
-          <p class="my-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-            ut labore et
-            dolore magna aliqua , consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna.
-          </p>
-          <button type="button" class="btn white-button font-weight-bold"><a href="#">More</a></button>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 75 ) ); ?></h3>
+        <div class="underlining main-color-line mt-3 mb-5"></div>
+      </div>
+      <div class="row">
+        <?php foreach ($services as $key => $item): ?>
+        <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
+          <div class="col-md-4 services-item text-center mb-5">
+            <div class="services-item-headding">
+              <i
+                class="<?php echo $meta_icon; ?> icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
+              <h4 class="services-item-name text-uppercase text-dark mb-3"><?php echo $item->post_title; ?></h4>
+            </div>
+            <div class="services-item-text">
+              <p><?php echo $item->post_content; ?></p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
+
+<?php $rates_section = $rates[0];?>
+  <section class="rates">
+    <div class="rates-cover-bg py-5">
+      <div class="container">
+        <div class="row text-center text-white">
+          <div class="col">
+            <h3 class="text-uppercase font-weight-bold"><?php echo $rates_section->post_title; ?></h3>
+            <div class="my-5"><?php echo $rates_section->post_content; ?></div>
+            <button type="button" class="btn white-button font-weight-bold"><a href="#"><?php echo $rates_section->post_excerpt; ?></a></button>
+          </div>
         </div>
       </div>
-      <!-- <div class="row justify-content-center">
-          
-        </div> -->
     </div>
-  </div>
-</section>
+  </section>
+
 
 <section class="blog py-5">
   <div class="container">

@@ -83,7 +83,7 @@ h4 {
 /*Backgrounds*/
 
 .connect {
-	background-image: url('../images/bg-contact.jpg');
+	background-image: url('images/bg-contact.jpg');
 	background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@ h4 {
 	background: rgba(1,16,65,0.7);
 }
 .rates {
-	background-image: url('../images/bg-rates.jpg');
+	background-image: url('images/bg-rates.jpg');
 	background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
