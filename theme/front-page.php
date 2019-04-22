@@ -77,7 +77,7 @@ foreach ($pagesForSections as $page) {
   <?php $banner_section = $banner[0];?>
   <div class="banner">
     <div class="col slogan-wrapper text-white">
-      <h2 class="sub-slogan"><?php echo $banner_section->post_excerpt; ?></h2>
+      <h2 class="sub-slogan sub-color"><?php echo $banner_section->post_excerpt; ?></h2>
       <h1 class="slogan font-weight-bold mt-4"><?php echo $banner_section->post_content; ?></h1>
     </div>
   </div>
@@ -108,15 +108,15 @@ foreach ($pagesForSections as $page) {
 
 <?php if ($free): ?>
 <section class="free sub-bg-color">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <?php foreach ($free as $key => $item): ?>
       <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
-      <div class="col-sm-6 col-md-3 free-item">
+      <div class="col-sm-6 col-md-4 col-xl-2 free-item">
         <div class="d-flex flex-column align-items-center text-center text-white">
           <i
-            class="fas <?php echo $meta_icon; ?> icon-common icon-aсcent d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <p><?php echo $item->post_content; ?></p>
+            class="<?php echo $meta_icon; ?> icon-common icon-aсcent d-flex justify-content-center align-items-center mx-auto mb-3"></i>
+          <p><?php echo $item->post_title; ?></p>
         </div>
       </div>
       <?php endforeach; ?>
