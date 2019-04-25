@@ -13,7 +13,7 @@ $free = [];
 $resources = [];
 $services = [];
 $rates = [];
-$blog = [];
+$simple = [];
 $connect = [];
 $counter  = 0;
 
@@ -40,8 +40,8 @@ foreach ($pagesForSections as $page) {
 		case 'rates':
 		$rates[] = $page;
 		break;
-		case 'blog':
-		$blog[] = $page;
+		case 'simple':
+		$simple[] = $page;
     break;
     case 'connect':
 		$connect[] = $page;
@@ -194,61 +194,23 @@ foreach ($pagesForSections as $page) {
   </div>
 </section>
 
-
-<section class="blog py-5">
+<?php $simple_section = $simple[0];?>
+<?php $thumbnailUrl = get_the_post_thumbnail_url($simple_section, full);?>
+<?php $meta_alt = get_post_meta( $simple_section->ID, 'alt', true ); ?>
+<section class="about py-5">
   <div class="container">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h3 class="text-uppercase text-dark font-weight-bold">Blog</h3>
-      <div class="underlining sub-color-line mt-3 mb-5"></div>
+    <div class="row">
+      <div class="col d-flex flex-column justify-content-center align-items-center">
+        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $simple_section->post_title; ?></h3>
+        <div class="underlining sub-color-line mt-3 mb-5"></div>
+      </div>
     </div>
     <div class="row">
-      <div class="col-md-4 blog-item mb-4">
-        <div class="image-wrapper mb-4">
-          <img class="images-size img-fluid" src="images/blog1.jpg" alt="">
-          <div class="date sub-bg-color d-flex justify-content-center align-items-center flex-column text-white">
-            <p class="font-weight-bold">12</p>
-            <span>Jun</span>
-          </div>
-        </div>
-        <h4 class="text-uppercase text-dark mb-3">Ut enim ad minim</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <div class="tags text-white mt-4">
-          <i class="fas fa-paperclip text-dark"></i>
-          <span>tags</span><span>tags</span><span>tags</span>
-        </div>
+      <div class="col-md-6">
+        <p class="text-center text-md-left"><?php echo $simple_section->post_content; ?></p>
       </div>
-      <div class="col-md-4 blog-item mb-4">
-        <div class="image-wrapper mb-4">
-          <img class="images-size img-fluid" src="images/blog2.jpg" alt="">
-          <div class="date sub-bg-color d-flex justify-content-center align-items-center flex-column text-white">
-            <p class="font-weight-bold">25</p>
-            <span>Oct</span>
-          </div>
-        </div>
-        <h4 class="text-uppercase text-dark mb-3">Ut enim ad minim</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <div class="tags text-white mt-4">
-          <i class="fas fa-paperclip text-dark"></i>
-          <span>tags</span><span>tags</span>
-        </div>
-      </div>
-      <div class="col-md-4 blog-item mb-4">
-        <div class="image-wrapper mb-4">
-          <img class="images-size img-fluid" src="images/blog3.jpg" alt="">
-          <div class="date sub-bg-color d-flex justify-content-center align-items-center flex-column text-white">
-            <p class="font-weight-bold">9</p>
-            <span>Nov</span>
-          </div>
-        </div>
-        <h4 class="text-uppercase text-dark mb-3">Ut enim ad minim</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <div class="tags text-white mt-4">
-          <i class="fas fa-paperclip text-dark"></i>
-          <span>tags</span><span>tags</span><span>tags</span>
-        </div>
+      <div class="col-md-6 mb-4">
+        <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
     </div>
   </div>

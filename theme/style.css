@@ -282,7 +282,8 @@ h4 {
   color: #fff;
 }
 .connect .white-button {
-	margin-top: 40px;
+  margin-top: 40px;
+  border: 1px solid #fff;
 }
 /*Footer*/
 .footer-nav-link, .footer-nav a {
