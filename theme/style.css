@@ -104,8 +104,17 @@ h4 {
   object-fit: cover;
   object-position: 50% 0%;
 }
-/*Backgrounds*/
+.custom-offset {
+  margin-top: 72px;
+}
 
+/*Backgrounds*/
+.primary-dark-bg {
+  background: #2b2547;
+}
+.primary-bright-bg {
+  background: #ff7c38;
+}
 .connect {
 	background-image: url('images/bg-contact.jpg');
 	background-size: cover;
@@ -143,7 +152,7 @@ h4 {
   position: relative;
 }
 .carousel-item {
-  height: 100vh;
+  height: 60vh;
 }
 .carousel-item-image {
   height: 100%;
@@ -295,6 +304,28 @@ h4 {
 .footer-nav-link:hover, .footer-nav a:hover {
 	color: rgb(18,26,58);
 	text-decoration: none;
+}
+
+/* Pages */
+.rates-page {
+  background: #f8f8f8;
+}
+.rates-page .rates-table {
+  margin-top: 2rem;
+}
+.rates-page .rates-table .row-1 {
+ background: rgba(248, 167, 86, 0.5);
+}
+.rates-page .rates-table caption {
+  display: none;
+}
+.rates-table .column-1 {
+  background: rgba(118,74,97,1);
+  color: white;
+}
+
+.rates-table td {
+  border: 3px solid #fff!important;
 }
 
 @media (max-width: 1199.98px) {

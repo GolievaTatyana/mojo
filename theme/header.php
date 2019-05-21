@@ -11,8 +11,7 @@
 </head>
 
 <body class="text-secondary">
-  <div class="position-relative">
-    <header class="site-header position-absolute w-100">
+    <header class="site-header primary-dark-bg position-fixed w-100">
       <div class="container">
         <div class="row">
           <nav class="header-nav navbar navbar-expand-lg w-100">
@@ -30,7 +29,7 @@
                 'container'       => 'div',
                 'container_class' => 'collapse navbar-collapse',
                 'container_id'    => 'navbarNav',
-                'menu_class'      => 'navbar-nav justify-content-end w-100 py-3 mt-3',
+                'menu_class'      => 'navbar-nav justify-content-end w-100 py-3',
                 )
               );
             ?>
@@ -39,3 +38,4 @@
         </div>
       </div>
     </header>
+    
