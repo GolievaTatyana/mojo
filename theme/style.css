@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'Caveat';
+  src: url("fonts/Caveat-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Prosto One';
+  src: url("fonts/ProstoOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url("fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url("fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+
 html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td,
 del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
@@ -14,27 +36,29 @@ dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
 li {
 	list-style: none;
 }
+
 /*Common*/
 body, html {
   width: 100%;
   overflow-x: hidden;
 }
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat-Regular';
 	font-size: 16px;
 	overflow-x: hidden;
 }
 .slogan {
-  font-size: 8vw;
+  font-family: 'Prosto One';
+  font-size: 5vw;
   line-height: 1;
 }
 .sub-slogan {
-	font-size: 3.5vw;
-  font-family: 'Lemonada', cursive;
-  font-family: 'Sriracha', cursive;
+	font-size: 3vw;
+  font-family: 'Caveat';
 }
 h3 {
   font-size: 30px;
+  font-family: 'Montserrat-SemiBold';
 }
 h4 {
   font-size: 24px;
@@ -224,8 +248,7 @@ h4 {
 .date span {
 	display: block;
 	font-size: 14px;
-	font-family: 'Lemonada', cursive;
-  font-family: 'Sriracha', cursive;
+	font-family: 'Caveat';
 }
 .tags span {
 	padding: 1px 5px;
@@ -233,8 +256,7 @@ h4 {
 	border-radius: 3px;
 	display: inline-block;
 	background: #ff7c38;
-	font-family: 'Lemonada', cursive;
-  font-family: 'Sriracha', cursive;
+	font-family: 'Caveat';
 }
 
 /*Connect*/
@@ -260,7 +282,8 @@ h4 {
   color: #fff;
 }
 .connect .white-button {
-	margin-top: 40px;
+  margin-top: 40px;
+  border: 1px solid #fff;
 }
 /*Footer*/
 .footer-nav-link, .footer-nav a {
@@ -272,6 +295,12 @@ h4 {
 .footer-nav-link:hover, .footer-nav a:hover {
 	color: rgb(18,26,58);
 	text-decoration: none;
+}
+
+@media (max-width: 1199.98px) {
+  .free-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
 }
 
 @media (max-width: 991.98px) {

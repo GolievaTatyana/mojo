@@ -13,7 +13,7 @@ $free = [];
 $resources = [];
 $services = [];
 $rates = [];
-$blog = [];
+$simple = [];
 $connect = [];
 $counter  = 0;
 
@@ -40,8 +40,8 @@ foreach ($pagesForSections as $page) {
 		case 'rates':
 		$rates[] = $page;
 		break;
-		case 'blog':
-		$blog[] = $page;
+		case 'simple':
+		$simple[] = $page;
     break;
     case 'connect':
 		$connect[] = $page;
@@ -54,104 +54,115 @@ foreach ($pagesForSections as $page) {
 <?php get_header(); ?>
 
 <?php if ($slider): ?>
-  <section class="slider">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators header-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"><span></span></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"><span></span></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"><span></span></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="3"><span></span></li>
-      </ol>
-      <div class="carousel-inner">
+<section class="slider">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators header-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"><span></span></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"><span></span></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"><span></span></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"><span></span></li>
+    </ol>
+    <div class="carousel-inner">
       <?php foreach ($slider as $key => $item): ?>
-        <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
-        <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
-        <div class="carousel-item active">
-          <img class="carousel-item-image d-block w-100" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
-        </div>
+      <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
+      <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
+      <div class="carousel-item active">
+        <img class="carousel-item-image d-block w-100" src="<?php echo $thumbnailUrl; ?>"
+          alt="<?php echo $meta_alt; ?>">
+      </div>
       <?php endforeach; ?>
-      </div>
     </div>
-<?php endif; ?>
+  </div>
+  <?php endif; ?>
   <?php $banner_section = $banner[0];?>
-    <div class="banner">
-      <div class="col slogan-wrapper text-white">
-        <h2 class="sub-slogan"><?php echo $banner_section->post_excerpt; ?></h2>
-        <h1 class="slogan font-weight-bold mt-4"><?php echo $banner_section->post_content; ?></h1>
-      </div>
+  <div class="banner">
+    <div class="col slogan-wrapper text-white">
+      <h2 class="sub-slogan sub-color"><?php echo $banner_section->post_excerpt; ?></h2>
+      <h1 class="slogan font-weight-bold mt-4"><?php echo $banner_section->post_content; ?></h1>
     </div>
-  </section>
+  </div>
+</section>
 </div>
 
 <?php $about_section = $about[0];?>
 <?php $thumbnailUrl = get_the_post_thumbnail_url($about_section, full);?>
 <?php $meta_alt = get_post_meta( $about_section->ID, 'alt', true ); ?>
-  <section class="about py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col d-flex flex-column justify-content-center align-items-center">
-          <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $about_section->post_title; ?></h3>
-          <div class="underlining sub-color-line mt-3 mb-5"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
-        </div>
-        <div class="col-md-6">
-          <p class="text-center text-md-left"><?php echo $about_section->post_content; ?></p>
-        </div>
+<section class="about py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex flex-column justify-content-center align-items-center">
+        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $about_section->post_title; ?></h3>
+        <div class="underlining sub-color-line mt-3 mb-5"></div>
       </div>
     </div>
-  </section>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+      </div>
+      <div class="col-md-6">
+        <p class="text-center text-md-left"><?php echo $about_section->post_content; ?></p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php if ($free): ?>
-  <section class="free sub-bg-color">
-    <div class="container">
-      <div class="row">
+<section class="free sub-bg-color">
+  <div class="container-fluid">
+    <div class="row">
       <?php foreach ($free as $key => $item): ?>
       <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
+<<<<<<< HEAD
         <div class="col-sm-6 col-md-3 free-item">
           <div class="d-flex flex-column align-items-center text-center text-white">
             <i
               class="<?php echo $meta_icon; ?> icon-common icon-aсcent d-flex justify-content-center align-items-center mx-auto mb-3"></i>
             <p><?php echo $item->post_content; ?></p>
           </div>
+=======
+      <div class="col-sm-6 col-md-4 col-xl-2 free-item">
+        <div class="d-flex flex-column align-items-center text-center text-white">
+          <i
+            class="<?php echo $meta_icon; ?> icon-common icon-aсcent d-flex justify-content-center align-items-center mx-auto mb-3"></i>
+          <p><?php echo $item->post_title; ?></p>
+>>>>>>> 2538c44b0524d1ba619e0f0565b5bc57db2ec04b
         </div>
-      <?php endforeach; ?>
       </div>
+      <?php endforeach; ?>
     </div>
-  </section>
+  </div>
+</section>
 <?php endif; ?>
 
 <?php if ($resources): ?>
-  <section class="resources my-5">
-    <div class="container">
-      <?php foreach ($resources as $key => $item): ?>
-      <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
-        <?php if ($key == 0): ?>
-          <div class="row text-center mb-4">
-            <div class="col">
-              <div class="d-flex flex-column justify-content-center align-items-center">
-                <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $item->post_title; ?></h3>
-                <div class="underlining main-color-line mt-3 mb-5"></div>
-              </div>
-              <p><?php echo $item->post_content; ?></p>
-            </div>
-          </div>
-        <div class="row"> 
-        <?php elseif ($key !== 0): ?>
-          <div class="col-md-4">
-            <img class="images-size mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="">
-          </div>
-        <?php endif; ?>
-      <?php endforeach; ?>
-      </div> 
+<section class="resources my-5">
+  <div class="container">
+    <?php foreach ($resources as $key => $item): ?>
+    <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
+    <?php if ($key == 0): ?>
+    <div class="row text-center mb-4">
+      <div class="col">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $item->post_title; ?></h3>
+          <div class="underlining main-color-line mt-3 mb-5"></div>
+        </div>
+        <p><?php echo $item->post_content; ?></p>
+      </div>
     </div>
-  </section>
+    <div class="row">
+      <?php elseif ($key !== 0): ?>
+      <div class="col-md-4">
+        <img class="images-size mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="">
+      </div>
+      <?php endif; ?>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
 <?php endif; ?>
 
 <?php if ($services): ?>
+<<<<<<< HEAD
   <section class="services py-5">
     <div class="container">
       <div class="d-flex flex-column justify-content-center align-items-center">
@@ -172,120 +183,97 @@ foreach ($pagesForSections as $page) {
             </div>
           </div>
         <?php endforeach; ?>
-      </div>
+=======
+<section class="services py-5">
+  <div class="container">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 75 ) ); ?></h3>
+      <div class="underlining main-color-line mt-3 mb-5"></div>
     </div>
-  </section>
+    <div class="row">
+      <?php foreach ($services as $key => $item): ?>
+      <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
+      <div class="col-md-4 services-item text-center mb-5">
+        <div class="services-item-headding">
+          <i
+            class="<?php echo $meta_icon; ?> icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
+          <h4 class="services-item-name text-uppercase text-dark mb-3"><?php echo $item->post_title; ?></h4>
+        </div>
+        <div class="services-item-text">
+          <p><?php echo $item->post_content; ?></p>
+        </div>
+>>>>>>> 2538c44b0524d1ba619e0f0565b5bc57db2ec04b
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
 <?php endif; ?>
 
 <?php $rates_section = $rates[0];?>
-  <section class="rates">
-    <div class="rates-cover-bg py-5">
-      <div class="container">
-        <div class="row text-center text-white">
-          <div class="col">
-            <h3 class="text-uppercase font-weight-bold"><?php echo $rates_section->post_title; ?></h3>
-            <div class="my-5"><?php echo $rates_section->post_content; ?></div>
-            <button type="button" class="btn white-button font-weight-bold"><a href="#"><?php echo $rates_section->post_excerpt; ?></a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-<section class="blog py-5">
-  <div class="container">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h3 class="text-uppercase text-dark font-weight-bold">Blog</h3>
-      <div class="underlining sub-color-line mt-3 mb-5"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 blog-item mb-4">
-        <div class="image-wrapper mb-4">
-          <img class="images-size img-fluid" src="images/blog1.jpg" alt="">
-          <div class="date sub-bg-color d-flex justify-content-center align-items-center flex-column text-white">
-            <p class="font-weight-bold">12</p>
-            <span>Jun</span>
-          </div>
-        </div>
-        <h4 class="text-uppercase text-dark mb-3">Ut enim ad minim</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <div class="tags text-white mt-4">
-          <i class="fas fa-paperclip text-dark"></i>
-          <span>tags</span><span>tags</span><span>tags</span>
-        </div>
-      </div>
-      <div class="col-md-4 blog-item mb-4">
-        <div class="image-wrapper mb-4">
-          <img class="images-size img-fluid" src="images/blog2.jpg" alt="">
-          <div class="date sub-bg-color d-flex justify-content-center align-items-center flex-column text-white">
-            <p class="font-weight-bold">25</p>
-            <span>Oct</span>
-          </div>
-        </div>
-        <h4 class="text-uppercase text-dark mb-3">Ut enim ad minim</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <div class="tags text-white mt-4">
-          <i class="fas fa-paperclip text-dark"></i>
-          <span>tags</span><span>tags</span>
-        </div>
-      </div>
-      <div class="col-md-4 blog-item mb-4">
-        <div class="image-wrapper mb-4">
-          <img class="images-size img-fluid" src="images/blog3.jpg" alt="">
-          <div class="date sub-bg-color d-flex justify-content-center align-items-center flex-column text-white">
-            <p class="font-weight-bold">9</p>
-            <span>Nov</span>
-          </div>
-        </div>
-        <h4 class="text-uppercase text-dark mb-3">Ut enim ad minim</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <div class="tags text-white mt-4">
-          <i class="fas fa-paperclip text-dark"></i>
-          <span>tags</span><span>tags</span><span>tags</span>
+<section class="rates">
+  <div class="rates-cover-bg py-5">
+    <div class="container">
+      <div class="row text-center text-white">
+        <div class="col">
+          <h3 class="text-uppercase font-weight-bold"><?php echo $rates_section->post_title; ?></h3>
+          <div class="my-5"><?php echo $rates_section->post_content; ?></div>
+          <button type="button" class="btn white-button font-weight-bold"><a
+              href="#"><?php echo $rates_section->post_excerpt; ?></a></button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<?php $simple_section = $simple[0];?>
+<?php $thumbnailUrl = get_the_post_thumbnail_url($simple_section, full);?>
+<?php $meta_alt = get_post_meta( $simple_section->ID, 'alt', true ); ?>
+<section class="about py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex flex-column justify-content-center align-items-center">
+        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $simple_section->post_title; ?></h3>
+        <div class="underlining sub-color-line mt-3 mb-5"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="text-center text-md-left"><?php echo $simple_section->post_content; ?></p>
+      </div>
+      <div class="col-md-6 mb-4">
+        <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php $connect_section = $connect[0];?>
 <section class="connect">
   <div class="connect-cover-bg">
     <div class="container py-5">
       <div class="row text-center text-white">
-        <div class="col">
-          <h3 class="text-uppercase font-weight-bold mb-5">Connect width us</h3>
-          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-            ut labore et
-            dolore magna aliqua , consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna.
-          </p>
+        <div class="col mb-5">
+          <h3 class="text-uppercase font-weight-bold mb-5"><?php echo $connect_section->post_title; ?></h3>
+          <p><?php echo $connect_section->post_excerpt; ?></p>
         </div>
       </div>
-      <form>
-        <div class="row">
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control rounded-0" placeholder="Name">
-          </div>
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control rounded-0" placeholder="Lust name">
-          </div>
+      <div class="row">
+        <div class="col">
+          <?php echo apply_filters( 'the_content', $connect_section->post_content ); ?>
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control rounded-0" placeholder="Subgect">
-        </div>
-        <div class="form-group">
-          <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="row justify-content-center">
-          <button type="submit" class="btn white-button font-weight-bold">Sign in</button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 <?php get_footer(); ?>
+=======
+
+<?php get_footer(); ?>
+
+
+
+
+>>>>>>> 2538c44b0524d1ba619e0f0565b5bc57db2ec04b
