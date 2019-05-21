@@ -114,7 +114,7 @@ foreach ($pagesForSections as $page) {
         <div class="col-sm-6 col-md-3 free-item">
           <div class="d-flex flex-column align-items-center text-center text-white">
             <i
-              class="fas <?php echo $meta_icon; ?> icon-common icon-aсcent d-flex justify-content-center align-items-center mx-auto mb-3"></i>
+              class="<?php echo $meta_icon; ?> icon-common icon-aсcent d-flex justify-content-center align-items-center mx-auto mb-3"></i>
             <p><?php echo $item->post_content; ?></p>
           </div>
         </div>
@@ -155,7 +155,7 @@ foreach ($pagesForSections as $page) {
   <section class="services py-5">
     <div class="container">
       <div class="d-flex flex-column justify-content-center align-items-center">
-        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 75 ) ); ?></h3>
+        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 67 ) ); ?></h3>
         <div class="underlining main-color-line mt-3 mb-5"></div>
       </div>
       <div class="row">
