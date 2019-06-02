@@ -206,34 +206,35 @@ foreach ($pagesForSections as $page) {
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 mb-4">
         <p class="text-center text-md-left"><?php echo $simple_section->post_content; ?></p>
       </div>
-      <div class="col-md-6 mb-4">
+      <div class="col-md-6">
         <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
     </div>
   </div>
 </section>
 
-<?php $connect_section = $connect[0];?>
-<section id="connecr" class="connect">
-  <div class="connect-cover-bg">
-    <div class="container py-5">
-      <div class="row text-center text-white">
-        <div class="col mb-5">
-          <h3 class="text-uppercase font-weight-bold mb-5"><?php echo $connect_section->post_title; ?></h3>
-          <p><?php echo $connect_section->post_excerpt; ?></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <?php echo apply_filters( 'the_content', $connect_section->post_content ); ?>
+<?php if ($connect): ?>
+  <section id="contact" class="connect">
+    <div class="connect-cover-bg">
+      <div class="container py-5">
+        <div class="row text-center text-white">
+          <div class="col">
+            <h3 class="text-uppercase font-weight-bold"><?php echo get_the_title( 110 ); ?></h3>
+          </div>
+          <?php foreach ($connect as $key => $item): ?>
+            <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
+              <div class="col-12">
+              <?php echo apply_filters( 'the_content', $item->post_content ); ?>
+              </div>
+            <?php endforeach; ?>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>
 

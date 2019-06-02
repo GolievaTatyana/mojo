@@ -18,6 +18,12 @@ $stati_children = new WP_Query(array(
   <div class="py-5">
     <div class="container">
       <div class="row">
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+          <h3 class="text-uppercase text-dark font-weight-bold"><?php echo get_the_title(); ?></h3>
+          <div class="underlining sub-color-line mt-3 mb-5"></div>
+        </div>
+      </div>
+      <div class="row">
         <?php if( $stati_children->have_posts() ) : ?>
           <?php while( $stati_children->have_posts() ) : $stati_children->the_post(); ?>
           <?php $thumbnailUrl = get_the_post_thumbnail_url( get_the_id(), full); ?>

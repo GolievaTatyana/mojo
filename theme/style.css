@@ -273,7 +273,8 @@ h4 {
 	background: transparent;
 	border: none;
 	border-bottom: 1px solid #fff;
-	outline: none;
+  outline: none;
+  color: #fff;
 }
 .connect input:focus, .connect textarea:focus {
 	background: rgba(255, 255, 255, 0.1);
