@@ -11,7 +11,8 @@ function theme_name_scripts() {
   wp_enqueue_style( 'style', get_stylesheet_uri() );
   
   wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js');
+  // wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js');
+  wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js');
   wp_enqueue_script( 'jquery' );
   
   wp_deregister_script( 'cdnjs' );
