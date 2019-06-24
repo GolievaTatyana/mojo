@@ -42,4 +42,23 @@ if ( function_exists('add_theme_support') ) {
 if ( function_exists('add_post_type_support') ) {
 	add_post_type_support('page', array('custom-fields', 'excerpt', 'thumbnail', 'page-attributes'));
 }
+
+/**
+ * Настройка SMTP
+ *
+ * @param PHPMailer $phpmailer объект мэилера
+ */
+function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
+  $phpmailer->isSMTP();
+  $phpmailer->Host       = SMTP_HOST;
+  $phpmailer->SMTPAuth   = SMTP_AUTH;
+  $phpmailer->Port       = SMTP_PORT;
+  $phpmailer->Username   = SMTP_USER;
+  $phpmailer->Password   = SMTP_PASS;
+  $phpmailer->SMTPSecure = SMTP_SECURE;
+  $phpmailer->From       = SMTP_FROM;
+  $phpmailer->FromName   = SMTP_NAME;
+}
+add_action( 'phpmailer_init', 'mihdan_send_smtp_email' );
+
 ;?>

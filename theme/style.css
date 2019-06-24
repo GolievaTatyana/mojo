@@ -277,18 +277,19 @@ h4 {
   color: #fff;
 }
 .connect input:focus, .connect textarea:focus {
-	background: rgba(255, 255, 255, 0.1);
-}
-.connect input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
-.connect input::-moz-placeholder { /* Firefox 19+ */
+.connect input::-webkit-input-placeholder, .connect textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #fff;
 }
-.connect input:-ms-input-placeholder { /* IE 10+ */
+.connect input::-moz-placeholder, .connect textarea::-moz-placeholder { /* Firefox 19+ */
   color: #fff;
 }
-.connect input:-moz-placeholder { /* Firefox 18- */
+.connect input:-ms-input-placeholder, .connect textarea:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.connect input:-moz-placeholder, .connect textarea:-moz-placeholder { /* Firefox 18- */
   color: #fff;
 }
 .connect .white-button {

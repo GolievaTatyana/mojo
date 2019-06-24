@@ -226,10 +226,10 @@ foreach ($pagesForSections as $page) {
           </div>
           <?php foreach ($connect as $key => $item): ?>
             <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
-              <div class="col-12">
-              <?php echo apply_filters( 'the_content', $item->post_content ); ?>
-              </div>
-            <?php endforeach; ?>
+            <div class="col-12">
+              <?php echo apply_filters( 'the_content', $item->post_content ); ?>            
+            </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
@@ -237,36 +237,3 @@ foreach ($pagesForSections as $page) {
 <?php endif; ?>
 
 <?php get_footer(); ?>
-
-
-
-<!-- <label> Your Name (required)
-    [text* your-name] </label>
-
-<label> Your Email (required)
-    [email* your-email] </label>
-
-<label> Subject
-    [text your-subject] </label>
-
-<label> Your Message
-    [textarea your-message] </label>
-
-[submit "Send"] -->
-
-
-
-<!-- golieva.tatyana@gmail.com
-khgruz <wordpress@mxak.local>
-khgruz "[your-subject]"
-Reply-To: [your-email]
-From: [your-name] <[your-email]>
-Subject: [your-subject]
-
-Message Body:
-[your-message]
-
--- 
-This e-mail was sent from a contact form on khgruz (http://mxak.local) -->
-
-<!-- [contact-form-7 id="95" title="Contact form 1"] -->
