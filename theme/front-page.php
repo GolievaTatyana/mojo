@@ -82,12 +82,12 @@ foreach ($pagesForSections as $page) {
     </div>
   </div>
 </section>
-</div>
+
 
 <?php $about_section = $about[0];?>
 <?php $thumbnailUrl = get_the_post_thumbnail_url($about_section, full);?>
 <?php $meta_alt = get_post_meta( $about_section->ID, 'alt', true ); ?>
-<section class="about py-5">
+<section id="about" class="about py-5">
   <div class="container">
     <div class="row">
       <div class="col d-flex flex-column justify-content-center align-items-center">
@@ -107,7 +107,7 @@ foreach ($pagesForSections as $page) {
 </section>
 
 <?php if ($free): ?>
-<section class="free sub-bg-color">
+<section id="free" class="free sub-bg-color">
   <div class="container-fluid">
     <div class="row">
       <?php foreach ($free as $key => $item): ?>
@@ -126,7 +126,7 @@ foreach ($pagesForSections as $page) {
 <?php endif; ?>
 
 <?php if ($resources): ?>
-<section class="resources my-5">
+<section id="resources" class="resources my-5">
   <div class="container">
     <?php foreach ($resources as $key => $item): ?>
     <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
@@ -153,33 +153,33 @@ foreach ($pagesForSections as $page) {
 <?php endif; ?>
 
 <?php if ($services): ?>
-<section class="services py-5">
-  <div class="container">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 75 ) ); ?></h3>
-      <div class="underlining main-color-line mt-3 mb-5"></div>
-    </div>
-    <div class="row">
-      <?php foreach ($services as $key => $item): ?>
-      <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
-      <div class="col-md-4 services-item text-center mb-5">
-        <div class="services-item-headding">
-          <i
-            class="<?php echo $meta_icon; ?> icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
-          <h4 class="services-item-name text-uppercase text-dark mb-3"><?php echo $item->post_title; ?></h4>
-        </div>
-        <div class="services-item-text">
-          <p><?php echo $item->post_content; ?></p>
-        </div>
+  <section id="services" class="services py-5">
+    <div class="container">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 67 ) ); ?></h3>
+        <div class="underlining main-color-line mt-3 mb-5"></div>
       </div>
-      <?php endforeach; ?>
+      <div class="row">
+        <?php foreach ($services as $key => $item): ?>
+        <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
+          <div class="col-md-4 services-item text-center mb-5">
+            <div class="services-item-headding">
+              <i
+                class="<?php echo $meta_icon; ?> icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
+              <h4 class="services-item-name text-uppercase text-dark mb-3"><?php echo $item->post_title; ?></h4>
+            </div>
+            <div class="services-item-text">
+              <p><?php echo $item->post_content; ?></p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 <?php endif; ?>
 
 <?php $rates_section = $rates[0];?>
-<section class="rates">
+<section id="rates" class="rates">
   <div class="rates-cover-bg py-5">
     <div class="container">
       <div class="row text-center text-white">
@@ -197,7 +197,7 @@ foreach ($pagesForSections as $page) {
 <?php $simple_section = $simple[0];?>
 <?php $thumbnailUrl = get_the_post_thumbnail_url($simple_section, full);?>
 <?php $meta_alt = get_post_meta( $simple_section->ID, 'alt', true ); ?>
-<section class="about py-5">
+<section id="simple" class="simple py-5">
   <div class="container">
     <div class="row">
       <div class="col d-flex flex-column justify-content-center align-items-center">
@@ -206,38 +206,67 @@ foreach ($pagesForSections as $page) {
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 mb-4">
         <p class="text-center text-md-left"><?php echo $simple_section->post_content; ?></p>
       </div>
-      <div class="col-md-6 mb-4">
+      <div class="col-md-6">
         <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
     </div>
   </div>
 </section>
 
-<?php $connect_section = $connect[0];?>
-<section class="connect">
-  <div class="connect-cover-bg">
-    <div class="container py-5">
-      <div class="row text-center text-white">
-        <div class="col mb-5">
-          <h3 class="text-uppercase font-weight-bold mb-5"><?php echo $connect_section->post_title; ?></h3>
-          <p><?php echo $connect_section->post_excerpt; ?></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <?php echo apply_filters( 'the_content', $connect_section->post_content ); ?>
+<?php if ($connect): ?>
+  <section id="contact" class="connect">
+    <div class="connect-cover-bg">
+      <div class="container py-5">
+        <div class="row text-center text-white">
+          <div class="col">
+            <h3 class="text-uppercase font-weight-bold"><?php echo get_the_title( 110 ); ?></h3>
+          </div>
+          <?php foreach ($connect as $key => $item): ?>
+            <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
+              <div class="col-12">
+              <?php echo apply_filters( 'the_content', $item->post_content ); ?>
+              </div>
+            <?php endforeach; ?>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>
 
 
 
+<!-- <label> Your Name (required)
+    [text* your-name] </label>
 
+<label> Your Email (required)
+    [email* your-email] </label>
+
+<label> Subject
+    [text your-subject] </label>
+
+<label> Your Message
+    [textarea your-message] </label>
+
+[submit "Send"] -->
+
+
+
+<!-- golieva.tatyana@gmail.com
+khgruz <wordpress@mxak.local>
+khgruz "[your-subject]"
+Reply-To: [your-email]
+From: [your-name] <[your-email]>
+Subject: [your-subject]
+
+Message Body:
+[your-message]
+
+-- 
+This e-mail was sent from a contact form on khgruz (http://mxak.local) -->
+
+<!-- [contact-form-7 id="95" title="Contact form 1"] -->
