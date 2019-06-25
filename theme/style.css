@@ -63,6 +63,9 @@ h3 {
 h4 {
   font-size: 24px;
 }
+.py-custom {
+  padding: 120px 0;
+}
 .underlining {
   width: 50px;
   height: 3px;
@@ -100,9 +103,10 @@ h4 {
 }
 .images-size {
 	width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: 50% 0%;
+  filter: grayscale(100%);
 }
 .custom-offset {
   margin-top: 72px;
@@ -146,21 +150,49 @@ h4 {
 }
 /*Slider*/
 .site-header {
-  z-index: 1;
+  z-index: 10;
 }
 .slider {
   position: relative;
 }
-.carousel-item {
-  height: 60vh;
+.carousel-inner, .carousel-inner .carousel-item {
+  height: 70vh;
 }
-.carousel-item-image {
+.item-1, .item-2, .item-3, .item-4 {
+  height: 100%;
+  width: 100%;
+}
+.item-1 {
+  background-image: url('images/banner-slide.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.item-2 {
+  background-image: url('images/banner-slide.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.item-3 {
+  background-image: url('images/banner-slide.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.item-4 {
+  background-image: url('images/banner-slide.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+} 
+/* .carousel-item-image {
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
+} */
 .header-indicators {
   bottom: 30px;
+  z-index: 1;
 }
 .header-indicators li {
   width: 12vw;
@@ -346,21 +378,60 @@ h4 {
   .header-indicators {
     bottom: 10px;
   }
+  .sub-slogan {
+    font-size: 4vw;
+  }
+  .section-image {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 @media (max-width: 767.98px) {
   .free-item:nth-child(2n-2) {
     border-right: 1px solid rgba(255, 255, 255, 0.2);
   }
+  .slogan-wrapper {
+    width: 70%;
+  }
+  .slogan {
+    font-size: 6vw;
+  }
+  .sub-slogan {
+    font-size: 5vw;
+  }
+  .images-size {
+    width: 100%;
+    height: 250px;
+  }
 }
 
 @media (max-width: 575.98px) {
+  body {
+    font-size: 14px;
+  }
+  .slogan-wrapper {
+    width: 100%;
+  }
+  .slogan {
+    font-size: 9vw;
+  }
+  .sub-slogan {
+    font-size: 7vw;
+  }
   h3 {
     font-size: 24px;
   }
   h4 {
     font-size: 18px;
   }
+}
+
+@media screen and (max-width: 600px) {
+#wpadminbar {
+    position: fixed !important;
 }
 
 

@@ -4,7 +4,7 @@
 
 <?php 
 
-$stati_children = new WP_Query(array(
+$static_children = new WP_Query(array(
   'post_type' => 'page',
   'post_parent' => get_the_ID(),
   'order' => 'ASC',
@@ -15,7 +15,7 @@ $stati_children = new WP_Query(array(
 ?>
 
 <section class="rates-page custom-offset">
-  <div class="py-5">
+  <div class="py-3">
     <div class="container">
       <div class="row">
         <div class="col d-flex flex-column justify-content-center align-items-center">
@@ -24,8 +24,8 @@ $stati_children = new WP_Query(array(
         </div>
       </div>
       <div class="row">
-        <?php if( $stati_children->have_posts() ) : ?>
-          <?php while( $stati_children->have_posts() ) : $stati_children->the_post(); ?>
+        <?php if( $static_children->have_posts() ) : ?>
+          <?php while( $static_children->have_posts() ) : $static_children->the_post(); ?>
           <?php $thumbnailUrl = get_the_post_thumbnail_url( get_the_id(), full); ?>
           <?php $meta_alt = get_post_meta( get_the_ID(), 'alt', true ); ?>
             <div class="col-sm-6 col-xl-3">

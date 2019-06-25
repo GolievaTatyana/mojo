@@ -64,12 +64,7 @@ foreach ($pagesForSections as $page) {
     </ol>
     <div class="carousel-inner">
       <?php foreach ($slider as $key => $item): ?>
-      <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
-      <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
-      <div class="carousel-item active">
-        <img class="carousel-item-image d-block w-100" src="<?php echo $thumbnailUrl; ?>"
-          alt="<?php echo $meta_alt; ?>">
-      </div>
+        <?php echo $item->post_excerpt; ?>
       <?php endforeach; ?>
     </div>
   </div>
@@ -87,7 +82,7 @@ foreach ($pagesForSections as $page) {
 <?php $about_section = $about[0];?>
 <?php $thumbnailUrl = get_the_post_thumbnail_url($about_section, full);?>
 <?php $meta_alt = get_post_meta( $about_section->ID, 'alt', true ); ?>
-<section id="about" class="about py-5">
+<section id="about" class="about py-custom">
   <div class="container">
     <div class="row">
       <div class="col d-flex flex-column justify-content-center align-items-center">
@@ -96,11 +91,11 @@ foreach ($pagesForSections as $page) {
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 mb-4">
-        <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+      <div class="col-lg-6">
+        <img class="img-fluid section-image mb-5" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
-      <div class="col-md-6">
-        <p class="text-center text-md-left"><?php echo $about_section->post_content; ?></p>
+      <div class="col-lg-6 text-center text-lg-left">
+        <?php echo $about_section->post_content; ?>
       </div>
     </div>
   </div>
@@ -126,12 +121,13 @@ foreach ($pagesForSections as $page) {
 <?php endif; ?>
 
 <?php if ($resources): ?>
-<section id="resources" class="resources my-5">
+<section id="resources" class="resources py-custom">
   <div class="container">
     <?php foreach ($resources as $key => $item): ?>
     <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
+    <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
     <?php if ($key == 0): ?>
-    <div class="row text-center mb-4">
+    <div class="row text-center mb-5">
       <div class="col">
         <div class="d-flex flex-column justify-content-center align-items-center">
           <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $item->post_title; ?></h3>
@@ -143,7 +139,7 @@ foreach ($pagesForSections as $page) {
     <div class="row">
       <?php elseif ($key !== 0): ?>
       <div class="col-md-4">
-        <img class="images-size mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="">
+        <img class="images-size mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
       <?php endif; ?>
       <?php endforeach; ?>
@@ -153,7 +149,7 @@ foreach ($pagesForSections as $page) {
 <?php endif; ?>
 
 <?php if ($services): ?>
-  <section id="services" class="services py-5">
+  <section id="services" class="services py-custom">
     <div class="container">
       <div class="d-flex flex-column justify-content-center align-items-center">
         <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 67 ) ); ?></h3>
@@ -162,7 +158,7 @@ foreach ($pagesForSections as $page) {
       <div class="row">
         <?php foreach ($services as $key => $item): ?>
         <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
-          <div class="col-md-4 services-item text-center mb-5">
+          <div class="col-md-6 col-lg-4 services-item text-center mb-5">
             <div class="services-item-headding">
               <i
                 class="<?php echo $meta_icon; ?> icon-common icon-sub-color d-flex justify-content-center align-items-center mx-auto mb-3"></i>
@@ -180,14 +176,12 @@ foreach ($pagesForSections as $page) {
 
 <?php $rates_section = $rates[0];?>
 <section id="rates" class="rates">
-  <div class="rates-cover-bg py-5">
+  <div class="rates-cover-bg py-custom">
     <div class="container">
       <div class="row text-center text-white">
         <div class="col">
           <h3 class="text-uppercase font-weight-bold"><?php echo $rates_section->post_title; ?></h3>
-          <div class="my-5"><?php echo $rates_section->post_content; ?></div>
-          <button type="button" class="btn white-button font-weight-bold"><a
-              href="#"><?php echo $rates_section->post_excerpt; ?></a></button>
+          <div class="mt-5"><?php echo $rates_section->post_content; ?></div>
         </div>
       </div>
     </div>
@@ -197,7 +191,7 @@ foreach ($pagesForSections as $page) {
 <?php $simple_section = $simple[0];?>
 <?php $thumbnailUrl = get_the_post_thumbnail_url($simple_section, full);?>
 <?php $meta_alt = get_post_meta( $simple_section->ID, 'alt', true ); ?>
-<section id="simple" class="simple py-5">
+<section id="simple" class="simple py-custom">
   <div class="container">
     <div class="row">
       <div class="col d-flex flex-column justify-content-center align-items-center">
@@ -206,27 +200,29 @@ foreach ($pagesForSections as $page) {
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 mb-4">
-        <p class="text-center text-md-left"><?php echo $simple_section->post_content; ?></p>
+      <div class="col-lg-6 order-lg-2">
+        <img class="img-fluid section-image mb-5" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
-      <div class="col-md-6">
-        <img class="img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+      <div class="col-lg-6 mb-4 order-lg-1 text-center text-lg-left">
+        <?php echo $simple_section->post_content; ?>
       </div>
     </div>
   </div>
 </section>
 
 <?php if ($connect): ?>
-  <section id="contact" class="connect">
+  <section id="connect" class="connect">
     <div class="connect-cover-bg">
-      <div class="container py-5">
+      <div class="container py-custom">
         <div class="row text-center text-white">
           <div class="col">
             <h3 class="text-uppercase font-weight-bold"><?php echo get_the_title( 110 ); ?></h3>
           </div>
+        </div>
+        <div class="row text-center text-white">
           <?php foreach ($connect as $key => $item): ?>
             <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
-            <div class="col-12">
+            <div class="col mt-5">
               <?php echo apply_filters( 'the_content', $item->post_content ); ?>            
             </div>
           <?php endforeach; ?>
