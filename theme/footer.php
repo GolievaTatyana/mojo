@@ -1,4 +1,4 @@
-    <footer class="site-footer py-5">
+    <footer class="site-footer py-3">
       <div class="container">
         <div class="row justify-content-center">
           

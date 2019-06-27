@@ -139,7 +139,7 @@ foreach ($pagesForSections as $page) {
     <div class="row">
       <?php elseif ($key !== 0): ?>
       <div class="col-md-4">
-        <img class="images-size mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+        <img class="images-size image-filter mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
       <?php endif; ?>
       <?php endforeach; ?>
@@ -216,7 +216,8 @@ foreach ($pagesForSections as $page) {
       <div class="container py-custom">
         <div class="row text-center text-white">
           <div class="col">
-            <h3 class="text-uppercase font-weight-bold"><?php echo get_the_title( 110 ); ?></h3>
+            <h3 class="text-uppercase font-weight-bold mb-5"><?php echo get_the_title( 110 ); ?></h3>
+            <div><?php echo get_the_excerpt( 110 ); ?></div>
           </div>
         </div>
         <div class="row text-center text-white">
