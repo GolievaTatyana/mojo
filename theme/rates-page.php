@@ -34,7 +34,7 @@ $static_children = new WP_Query(array(
               <!-- <img class="img-fluid image-filter" src="<//?php echo $thumbnailUrl; ?>" alt="<//?php echo $meta_alt; ?>"> -->
               <div class="card-body border-bottom-0 p-0">
                 <h5 class="card-title font-weight-bold primary-dark-bg text-center text-white px-4 py-3 mb-0"><?php echo get_the_title(); ?></h5>
-                <div class="list-group list-group-flush p-3"><?php echo get_the_content(); ?></div>
+                <div class="list-group list-group-flush"><?php echo get_the_content(); ?></div>
               </div>
             </div>
           </div>

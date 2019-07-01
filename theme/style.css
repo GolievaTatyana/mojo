@@ -250,6 +250,15 @@ h4 {
   color: #ff7c38;
   border-bottom: 2px solid #ff7c38;
 }
+.navbar-toggler svg {
+  fill: #ff7c38;
+}
+.phone-header-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
 /*Free section*/
 .free-item {
 	border-left: 1px solid rgba(255, 255, 255, 0.2);
@@ -400,9 +409,6 @@ h4 {
   }
   .header-item-link, .navbar-nav .menu-item a {
     display: block;
-  }
-  .navbar-toggler svg {
-    fill: #ff7c38;
   }
   .header-indicators {
     bottom: 10px;

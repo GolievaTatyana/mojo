@@ -28,7 +28,8 @@ function theme_name_scripts() {
 add_action('after_setup_theme', function(){
 	register_nav_menus( array(
 		'header_menu' => 'Header menu',
-		'footer_menu' => 'Footer menu'
+    'footer_menu' => 'Footer menu',
+    'phone_header_menu' => 'Phone header menu'
 	) );
 });
 
@@ -37,6 +38,7 @@ if ( function_exists('add_theme_support') ) {
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size( 240, 240 );
 }
+
 
 // Post type support
 if ( function_exists('add_post_type_support') ) {

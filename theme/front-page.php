@@ -77,7 +77,7 @@ foreach ($pagesForSections as $page) {
     </div>
   </div>
 </section>
-
+<div class="custom">
 
 <?php $about_section = $about[0];?>
 <?php $thumbnailUrl = get_the_post_thumbnail_url($about_section, full);?>
