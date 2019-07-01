@@ -7,6 +7,7 @@ $args = array(
 $pagesForSections = get_pages($args);
 
 $slider = [];
+$stock = [];
 $banner = [];
 $about = [];
 $free = [];
@@ -21,6 +22,9 @@ foreach ($pagesForSections as $page) {
   switch ($page->meta_value) {
     case 'slider':
 		$slider[] = $page;
+    break;
+    case 'stock':
+		$stock[] = $page;
 		break;
 		case 'banner':
 		$banner[] = $page;
@@ -78,6 +82,25 @@ foreach ($pagesForSections as $page) {
   </div>
 </section>
 <div class="custom">
+
+<?php if ($stock): ?>
+  <?php $stock_section = $stock[0];?>
+  <section id="stock" class="stock py-custom">
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+          <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $stock_section->post_title; ?></h3>
+          <div class="underlining sub-color-line mt-3 mb-5"></div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <div><?php echo $stock_section->post_content; ?></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
 
 <?php $about_section = $about[0];?>
 <?php $thumbnailUrl = get_the_post_thumbnail_url($about_section, full);?>
@@ -217,13 +240,11 @@ foreach ($pagesForSections as $page) {
         <div class="row text-center text-white">
           <div class="col">
             <h3 class="text-uppercase font-weight-bold mb-5"><?php echo get_the_title( 110 ); ?></h3>
-            <div><?php echo get_the_excerpt( 110 ); ?></div>
           </div>
         </div>
-        <div class="row text-center text-white">
+        <div class="row text-white">
           <?php foreach ($connect as $key => $item): ?>
-            <?php $meta_icon = get_post_meta( $item->ID, 'icon_class', true ); ?>
-            <div class="col mt-5">
+            <div class="col-lg-6 contact-form-wrapper">
               <?php echo apply_filters( 'the_content', $item->post_content ); ?>            
             </div>
           <?php endforeach; ?>

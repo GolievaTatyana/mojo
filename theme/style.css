@@ -64,7 +64,8 @@ h4 {
   font-size: 24px;
 }
 .py-custom {
-  padding: 120px 0;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 .underlining {
   width: 50px;
@@ -147,7 +148,7 @@ h4 {
 .rates-cover-bg {
 	background: rgba(63,30,70,0.7);
 }
-.services, .site-footer {
+.services, .site-footer, .stock {
 	background: #f8f8f8;
 }
 /*Slider*/
@@ -259,6 +260,10 @@ h4 {
   font-size: 14px;
   font-weight: bold;
 }
+.logo {
+  width: 100px;
+}
+
 /*Free section*/
 .free-item {
 	border-left: 1px solid rgba(255, 255, 255, 0.2);
@@ -318,6 +323,7 @@ h4 {
 	border-bottom: 1px solid #fff;
   outline: none;
   color: #fff;
+  padding: 0;
 }
 .connect input:focus, .connect textarea:focus {
   background: rgba(255, 255, 255, 0.1);
@@ -338,6 +344,12 @@ h4 {
 .connect .white-button {
   margin-top: 40px;
   border: 1px solid #fff;
+}
+.connect textarea {
+  height: 120px;
+}
+.connect input[type="submit"] {
+    padding: 8px 26px;
 }
 /*Footer*/
 .footer-nav-link, .footer-nav a {
@@ -401,6 +413,11 @@ h4 {
   .free-item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
+  .phone-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -448,7 +465,8 @@ h4 {
     font-size: 14px;
   }
   .py-custom {
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
   .slogan-wrapper {
     width: 100%;
@@ -464,6 +482,9 @@ h4 {
   }
   h4 {
     font-size: 18px;
+  }
+  .phone-header-menu a {
+    font-size: 11px;
   }
 }
 
