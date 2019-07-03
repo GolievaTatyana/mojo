@@ -147,8 +147,6 @@ foreach ($pagesForSections as $page) {
 <section id="resources" class="resources py-custom">
   <div class="container">
     <?php foreach ($resources as $key => $item): ?>
-      <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
-      <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
       <?php if ($key == 0): ?>
         <div class="row text-center mb-5">
           <div class="col">
@@ -175,7 +173,7 @@ foreach ($pagesForSections as $page) {
   <section id="services" class="services py-custom">
     <div class="container">
       <div class="d-flex flex-column justify-content-center align-items-center">
-        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 67 ) ); ?></h3>
+        <h3 class="text-uppercase text-dark font-weight-bold"><?php echo esc_html( get_the_title( 75 ) ); ?></h3>
         <div class="underlining main-color-line mt-3 mb-5"></div>
       </div>
       <div class="row">
