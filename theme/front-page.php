@@ -147,26 +147,26 @@ foreach ($pagesForSections as $page) {
 <section id="resources" class="resources py-custom">
   <div class="container">
     <?php foreach ($resources as $key => $item): ?>
-    <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
-    <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
-    <?php if ($key == 0): ?>
-    <div class="row text-center mb-5">
-      <div class="col">
-        <div class="d-flex flex-column justify-content-center align-items-center">
-          <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $item->post_title; ?></h3>
-          <div class="underlining main-color-line mt-3 mb-5"></div>
+      <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
+      <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
+      <?php if ($key == 0): ?>
+        <div class="row text-center mb-5">
+          <div class="col">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <h3 class="text-uppercase text-dark font-weight-bold"><?php echo $item->post_title; ?></h3>
+              <div class="underlining main-color-line mt-3 mb-5"></div>
+            </div>
+            <div><?php echo $item->post_content; ?></div>
+          </div>
         </div>
-        <p><?php echo $item->post_content; ?></p>
-      </div>
-    </div>
-    <div class="row">
       <?php elseif ($key !== 0): ?>
-      <div class="col-md-4">
-        <img class="images-size image-filter mb-3 img-fluid" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
-      </div>
+        <div class="row">
+          <div class="col">
+            <?php echo apply_filters( 'the_content', $item->post_content ); ?>
+          </div>
+        </div> 
       <?php endif; ?>
-      <?php endforeach; ?>
-    </div>
+    <?php endforeach; ?>
   </div>
 </section>
 <?php endif; ?>
