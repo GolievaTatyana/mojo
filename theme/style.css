@@ -424,24 +424,6 @@ h4 {
   height: calc(100vh - 72px);
 }
 
-/* .rates-page .rates-table {
-  margin-top: 2rem;
-}
-.rates-page .rates-table .row-1 {
- background: rgba(248, 167, 86, 0.5);
-}
-.rates-page .rates-table caption {
-  display: none;
-}
-.rates-table .column-1 {
-  background: rgba(118,74,97,1);
-  color: white;
-}
-
-.rates-table td {
-  border: 3px solid #fff!important;
-} */
-
 .main-info {
   font-family: 'Prosto One';
   font-size: 5vw;
@@ -450,6 +432,44 @@ h4 {
 .sub-info {
 	font-size: 3vw;
   font-family: 'Caveat';
+}
+
+.ratesType-page .ctu-ulimate-style-3 .vc-tabs-li, 
+.ratesType-page .ctu-ulimate-style-5 .vc-tabs-li, 
+.ratesType-page .ctu-ulimate-style-6 .vc-tabs-li {
+  height: 100%;
+  color: #ffffff;
+  background: #ff7c38;
+  border-left: 3px solid #2b2546;
+}
+.ratesType-page .ctu-ulimate-style-3 .vc-tabs-li em, 
+.ratesType-page .ctu-ulimate-style-3 .vc-tabs-li.active span, 
+.ratesType-page .ctu-ulimate-style-5 .vc-tabs-li em, 
+.ratesType-page .ctu-ulimate-style-5 .vc-tabs-li.active span,
+.ratesType-page .ctu-ulimate-style-6 .vc-tabs-li em, 
+.ratesType-page .ctu-ulimate-style-6 .vc-tabs-li.active span {
+  display: none;
+}
+.ratesType-page .ctu-ulimate-style-3 .vc-tabs-li, 
+.ratesType-page .ctu-ulimate-style-5 .vc-tabs-li, 
+.ratesType-page .ctu-ulimate-style-6 .vc-tabs-li {
+  width: 100%;
+  max-width: 100%;
+}
+.ratesType-page .ctu-ulimate-style-3 .vc-tabs-li.active, 
+.ratesType-page .ctu-ulimate-style-5 .vc-tabs-li.active, 
+.ratesType-page .ctu-ulimate-style-6 .vc-tabs-li.active {
+  border-color: #ff7c38;
+  box-shadow: none;
+  color: #ffffff;
+  background: #2b2547;
+  width: 100%;
+}
+.ratesType-page .ctu-ulitate-style-3-tabs, 
+.ratesType-page .ctu-ulitate-style-5-tabs, 
+.ratesType-page .ctu-ulitate-style-6-tabs {
+  box-shadow: none;
+  padding: 20px 30px 30px 30px;
 }
 
 
