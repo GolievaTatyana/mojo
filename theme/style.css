@@ -344,7 +344,7 @@ h4 {
 .resources .ctu-ulitate-style-2-tabs {
   width: 100%;
   display: none;
-  padding: 30px 0 30px 0;
+  padding: 30px 20px;
   /* background-color: #f8f8f8; */
   border-bottom: 3px solid #2b2547;
 }
@@ -434,6 +434,21 @@ h4 {
   font-family: 'Caveat';
 }
 
+.rates-banner {
+  object-fit: cover;
+  object-position: center;
+  height: 300px;
+  width: 100%;
+}
+.ratesType-page .oxi-addons-container {
+  margin-bottom: 3rem;
+}
+.ratesType-page .ctu-ultimate-style-3-content, 
+.ratesType-page .ctu-ultimate-style-5-content, 
+.ratesType-page .ctu-ultimate-style-6-content {
+  height: 100%;
+  border-bottom: 3px solid #2b2547;
+}
 .ratesType-page .ctu-ulimate-style-3 .vc-tabs-li, 
 .ratesType-page .ctu-ulimate-style-5 .vc-tabs-li, 
 .ratesType-page .ctu-ulimate-style-6 .vc-tabs-li {
@@ -441,6 +456,12 @@ h4 {
   color: #ffffff;
   background: #ff7c38;
   border-left: 3px solid #2b2546;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.ratesType-page .ctu-ulimate-style-3 .vc-tabs-li:last-child, 
+.ratesType-page .ctu-ulimate-style-5 .vc-tabs-li:last-child, 
+.ratesType-page .ctu-ulimate-style-6 .vc-tabs-li:last-child {
+  border-bottom: none;
 }
 .ratesType-page .ctu-ulimate-style-3 .vc-tabs-li em, 
 .ratesType-page .ctu-ulimate-style-3 .vc-tabs-li.active span, 
@@ -464,12 +485,36 @@ h4 {
   color: #ffffff;
   background: #2b2547;
   width: 100%;
+  border-radius: 0;
 }
 .ratesType-page .ctu-ulitate-style-3-tabs, 
 .ratesType-page .ctu-ulitate-style-5-tabs, 
 .ratesType-page .ctu-ulitate-style-6-tabs {
   box-shadow: none;
-  padding: 20px 30px 30px 30px;
+  padding: 20px 30px;
+  color: #6c757d;
+  border-top: 3px solid #2b2547;
+  border-radius: 0;
+}
+
+.ratesType-page .ctu-ulitate-style-3-tabs li, 
+.ratesType-page .ctu-ulitate-style-5-tabs li, 
+.ratesType-page .ctu-ulitate-style-6-tabs li {
+  padding: 10px;
+}
+
+.ratesType-page .ctu-ulitate-style-3-tabs li:first-child, 
+.ratesType-page .ctu-ulitate-style-5-tabs li:first-child, 
+.ratesType-page .ctu-ulitate-style-6-tabs li:first-child {
+  padding-top: 0;
+  color: #ff7c38;
+  font-size: 20px;
+}
+
+.ratesType-page .ctu-ulitate-style-3-tabs li:last-child, 
+.ratesType-page .ctu-ulitate-style-5-tabs li:last-child, 
+.ratesType-page .ctu-ulitate-style-6-tabs li:last-child {
+  padding-bottom: 0;
 }
 
 
@@ -482,14 +527,14 @@ h4 {
     top: 10px;
     right: 10px;
   }
+  .header-item-link, .navbar-nav .menu-item a {
+    display: block;
+  }
 }
 
 @media (max-width: 991.98px) {
   .navbar-nav {
     background: rgba(18,26,58,0.9);
-  }
-  .header-item-link, .navbar-nav .menu-item a {
-    display: block;
   }
   .header-indicators {
     bottom: 10px;
@@ -519,6 +564,36 @@ h4 {
   }
   .resources .ctu-ultimate-style-heading-2 .oxi-icons {
     color: #ffffff;
+  }
+
+  .ratesType-page .ctu-ultimate-style-heading-3.active, 
+  .ratesType-page .ctu-ultimate-style-heading-5.active, 
+  .ratesType-page .ctu-ultimate-style-heading-6.active {
+    color: #ffffff;
+    border-radius: 0;
+    background: #2b2547;
+  }
+  .ratesType-page .ctu-ultimate-style-heading-3.active em, 
+  .ratesType-page .ctu-ultimate-style-heading-5.active em, 
+  .ratesType-page .ctu-ultimate-style-heading-6.active em {
+    display: none;
+  }
+  .ratesType-page .ctu-ultimate-style-heading-3, 
+  .ratesType-page .ctu-ultimate-style-heading-5, 
+  .ratesType-page .ctu-ultimate-style-heading-6 {
+    color: #ffffff;
+    background-color: #ff7c38;
+    border-radius: 0;
+  }
+  .ratesType-page .ctu-ultimate-style-heading-3 em, 
+  .ratesType-page .ctu-ultimate-style-heading-5 em, 
+  .ratesType-page .ctu-ultimate-style-heading-6 em {
+    display: none;
+  }
+  .ratesType-page .ctu-ulitate-style-3-tabs, 
+  .ratesType-page .ctu-ulitate-style-5-tabs, 
+  .ratesType-page .ctu-ulitate-style-6-tabs {
+    padding: 20px 10px;
   }
 }
 
@@ -577,4 +652,14 @@ h4 {
     position: fixed !important;
 }
 
+@media (max-height: 640px) and (max-width: 1100px) {
+  .customize-support .navbar-collapse {
+    height: calc(100vh - 101px);
+    overflow: scroll;
+  }
+  .navbar-collapse {
+    height: calc(100vh - 54px);
+    overflow: scroll;
+  }
+}
 
