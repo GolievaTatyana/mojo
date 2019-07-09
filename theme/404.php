@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div id="content-404" class="content-404 custom-offset">
-  <div class="container d-flex flex-column justify-content-center align-items-center h-100">
+  <div class="container d-flex flex-column justify-content-center align-items-center no-scroll-page">
     <div class="row">
       <div class="col">
         <h3 class="text-center main-info main-color">404</h3>
@@ -10,3 +10,5 @@
     </div>
   </div>
 </div>
+
+<?php get_footer(); ?>

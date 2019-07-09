@@ -1,16 +1,15 @@
 <?php get_header(); ?>
 
-  <div class="page">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <?php while ( have_posts() ) : the_post(); ?>
-            <?php the_content(); ?>
-          <?php endwhile; ?>
-        </div>
+<div id="content-404" class="content-404 custom-offset">
+  <div class="container d-flex flex-column justify-content-center align-items-center no-scroll-page">
+    <div class="row">
+      <div class="col my-5">
+        <?php while ( have_posts() ) : the_post(); ?>
+          <?php the_content(); ?>
+        <?php endwhile; ?>
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <?php get_footer(); ?>

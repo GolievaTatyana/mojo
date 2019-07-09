@@ -93,7 +93,7 @@ h4 {
 	color: #fff;
 	background: transparent;
 	border: 1px solid #fff;
-	border-radius: 20px;
+	border-radius: 0;
 	padding: 8px 26px;
 }
 .white-button a {
@@ -112,7 +112,7 @@ h4 {
   object-position: 50% 0%;
 }
 .custom-offset {
-  margin-top: 72px;
+  margin-top: 70px;
 }
 
 /*Backgrounds*/
@@ -136,9 +136,9 @@ h4 {
 	background: rgba(1,16,65,0.7);
 }
 .rates {
-	background-image: url('images/bg-rates.jpg');
+	background-image: url('images/rates-bg3.jpg');
 	background-size: cover;
-  background-position: center;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -146,7 +146,7 @@ h4 {
   background-size: cover;
 }
 .rates-cover-bg {
-	background: rgba(63,30,70,0.7);
+	background: rgba(44, 7, 52,0.7);
 }
 .services, .site-footer, .stock {
 	background: #f8f8f8;
@@ -164,29 +164,28 @@ h4 {
 .item-1, .item-2, .item-3, .item-4 {
   height: 100%;
   width: 100%;
+  filter: grayscale(100%);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .item-1 {
-  background-image: url('images/banner-slide.jpg');
-  background-size: cover;
+  background-image: url('images/kh1.jpg');
   background-position: 50% 50%;
 }
 
 .item-2 {
-  background-image: url('images/banner-slide.jpg');
-  background-size: cover;
+  background-image: url('images/kh2.jpg');
   background-position: 50% 50%;
 }
 
 .item-3 {
-  background-image: url('images/banner-slide.jpg');
-  background-size: cover;
+  background-image: url('images/kh3.jpg');
   background-position: 50% 50%;
 }
 
 .item-4 {
-  background-image: url('images/banner-slide.jpg');
-  background-size: cover;
-  background-position: 50% 50%;
+  background-image: url('images/kh4.jpg');
+  background-position: 50% 0%;
 } 
 /* .carousel-item-image {
   height: 100%;
@@ -312,6 +311,9 @@ h4 {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   /* margin-left: -1px; */
 }
+.resources .ctu-ulimate-style-2 .vc-tabs-li:hover {
+  filter: opacity(0.8);
+}
 .resources .ctu-ulimate-style-2 .vc-tabs-li:last-child {
   border-right: none;
 }
@@ -372,6 +374,8 @@ h4 {
 .connect input:focus, .connect textarea:focus {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  border-color: #ffffff;
+  box-shadow: none;
 }
 .connect input::-webkit-input-placeholder, .connect textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #fff;
@@ -388,6 +392,10 @@ h4 {
 .connect .white-button {
   margin-top: 40px;
   border: 1px solid #fff;
+  color: #ffffff;
+}
+.white-button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 .connect textarea {
   height: 120px;
@@ -408,20 +416,11 @@ h4 {
 }
 
 /* Pages */
-.customize-support .rates-page {
-  min-height: calc(100vh - 104px);
+.customize-support .no-scroll-page {
+  min-height: calc(100vh - 160px);
 }
-.rates-page {
-  background: #f8f8f8;
-  min-height: calc(100vh - 72px);
-}
-
-.customize-support .content-404 {
-  height: calc(100vh - 104px);
-}
-.content-404 {
-  background: #f8f8f8;
-  height: calc(100vh - 72px);
+.no-scroll-page {
+  min-height: calc(100vh - 128px);
 }
 
 .main-info {
@@ -458,6 +457,11 @@ h4 {
   border-left: 3px solid #2b2546;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+.ratesType-page .ctu-ulimate-style-3 .vc-tabs-li:hover, 
+.ratesType-page .ctu-ulimate-style-5 .vc-tabs-li:hover, 
+.ratesType-page .ctu-ulimate-style-6 .vc-tabs-li:hover {
+  filter: opacity(0.8);
+}
 .ratesType-page .ctu-ulimate-style-3 .vc-tabs-li:last-child, 
 .ratesType-page .ctu-ulimate-style-5 .vc-tabs-li:last-child, 
 .ratesType-page .ctu-ulimate-style-6 .vc-tabs-li:last-child {
@@ -486,6 +490,7 @@ h4 {
   background: #2b2547;
   width: 100%;
   border-radius: 0;
+  filter: opacity(1);
 }
 .ratesType-page .ctu-ulitate-style-3-tabs, 
 .ratesType-page .ctu-ulitate-style-5-tabs, 
@@ -543,7 +548,7 @@ h4 {
     font-size: 4vw;
   }
   .section-image {
-    max-height: 200px;
+    /* max-height: 200px; */
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -652,7 +657,7 @@ h4 {
     position: fixed !important;
 }
 
-@media (max-height: 640px) and (max-width: 1100px) {
+@media (max-height: 567px) and (max-width: 1100px) {
   .customize-support .navbar-collapse {
     height: calc(100vh - 101px);
     overflow: scroll;

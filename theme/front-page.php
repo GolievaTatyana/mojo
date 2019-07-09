@@ -115,7 +115,7 @@ foreach ($pagesForSections as $page) {
     </div>
     <div class="row">
       <div class="col-lg-6">
-        <img class="img-fluid section-image mb-5" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+        <img class="img-fluid section-image image-filter mb-5 mb-lg-0" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
       <div class="col-lg-6 text-center text-lg-left">
         <?php echo $about_section->post_content; ?>
@@ -222,7 +222,7 @@ foreach ($pagesForSections as $page) {
     </div>
     <div class="row">
       <div class="col-lg-6 order-lg-2">
-        <img class="img-fluid section-image mb-5" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+        <img class="img-fluid section-image image-filter mb-5 mb-lg-0" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
       </div>
       <div class="col-lg-6 mb-4 order-lg-1 text-center text-lg-left">
         <?php echo $simple_section->post_content; ?>

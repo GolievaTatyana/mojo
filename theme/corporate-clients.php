@@ -23,34 +23,35 @@ foreach ($сorpInfoItemClients as $infoItem) {
 <?php get_header(); ?>
 
 <?php if ($сorpInfoItem): ?>
-  <div class="сorpInfoItem-page custom-offset py-3">
-    <div class="container">
-      <div class="row">
-        <div class="col d-flex flex-column justify-content-center align-items-center">
-          <h3 class="text-uppercase text-dark font-weight-bold"><?php echo get_the_title( 242 ); ?></h3>
-          <div class="underlining sub-color-line mt-3 mb-5"></div>
-        </div>
-      </div>
-      <?php foreach ($сorpInfoItem as $key => $item): ?>
+  <div class="сorpInfoItem-page custom-offset no-scroll-page">
+    <?php foreach ($сorpInfoItem as $key => $item): ?>
       <?php $thumbnailUrl = get_the_post_thumbnail_url($item, full);?>
       <?php $meta_alt = get_post_meta( $item->ID, 'alt', true ); ?>
-        <?php if ($key == 0): ?>
+      <?php if ($key == 0): ?>
+        <div class="container-fluid px-0">
           <div class="row">
             <div class="col-12">
-              <img class="infoItems-banner image-filter img-fluid mb-5" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+              <img class="rates-banner image-filter img-fluid mb-5" src="<?php echo $thumbnailUrl; ?>" alt="<?php echo $meta_alt; ?>">
+              <div class="d-flex flex-column justify-content-center align-items-center">
+                <h3 class="text-uppercase text-dark font-weight-bold"><?php echo get_the_title( 242 ); ?></h3>
+                <div class="underlining sub-color-line mt-3 mb-5"></div>
+              </div>
             </div>
           </div>
-        <?php elseif ($key !== 0): ?>
+        </div>
+      <?php elseif ($key !== 0): ?>
+        <div class="container">
           <div class="row">
             <div class="col-12">
               <h4 class="text-dark text-uppercase mb-3 text-center mb-5"><?php echo $item->post_title; ?></h4>
-              <div><?php echo $item->post_content; ?></div>
+              <div class="mb-5">
+                <?php echo $item->post_content; ?>
+              </div>
             </div>
           </div>
-        <?php endif; ?>
-      <?php endforeach; ?>
-      </div>
-    </div>
+        </div>
+      <?php endif; ?>
+    <?php endforeach; ?>
   </div>
 <?php endif; ?>
 
