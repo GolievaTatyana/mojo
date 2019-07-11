@@ -15,7 +15,7 @@
 </head>
 
 <body class="text-secondary">
-  <header class="site-header primary-dark-bg position-fixed w-100">
+  <header class="site-header main-bg-color position-fixed w-100">
     <div class="container">
       <div class="row justify-content-between position-relative">
         <nav class="header-nav navbar navbar-expand-xl w-100 d-flex justify-content-between">
